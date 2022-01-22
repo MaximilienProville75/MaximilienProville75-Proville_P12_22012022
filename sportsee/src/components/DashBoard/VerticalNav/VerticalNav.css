@@ -1,0 +1,32 @@
+.verticalNav{
+    width: 110px;
+    background: black;
+    height: 88.6vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.activityList{
+    text-align: center;
+}
+
+.activityList img{
+    margin-bottom: 10px;
+    
+}
+.copyRightText{
+    color: white;
+    rotate: 270deg;
+    margin-bottom: -135px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    width: 100%;
+}

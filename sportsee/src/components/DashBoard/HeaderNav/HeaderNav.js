@@ -1,6 +1,6 @@
 import React from "react";
 import "../HeaderNav/HeaderNav.css";
-import logo from "./sportsee/src/assets/logo.png";
+import logo from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/logo.png";
 
 function HeaderNav() {
   return (
