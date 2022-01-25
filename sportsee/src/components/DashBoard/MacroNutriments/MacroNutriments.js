@@ -44,7 +44,6 @@ function generateItems(props) {
 }
 
 function MacroNutriments(props) {
-  console.log(props);
   return (
     <div className="MacroCard">
       <div className="MacoInfosImg">

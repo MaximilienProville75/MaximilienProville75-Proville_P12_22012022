@@ -7,12 +7,8 @@ const userIdInfo12 = getUserById(12);
 const keyData = userIdInfo12.keyData;
 const lengthArr = Object.values(keyData);
 const keyValues = Object.keys(keyData);
-console.log(keyData);
 
 function MacroNutrimentsList() {
-  const filteredVal = lengthArr.map((x) => {
-    return x;
-  });
   let count = 0;
   const card = keyValues.map((y) => {
     count++;

@@ -7,11 +7,14 @@ import VerticalNav from "./VerticalNav/VerticalNav";
 import UserInfos from "./UserInfos/UserInfos";
 import MacroNutrimentsList from "./MacroNutriments/MacroNutrimentList";
 
+import ObjectifGraph from "./ObjectifGraph/ObjectifGraph";
+
 function Dashboard() {
   return (
     <>
       <HeaderNav />
       <UserInfos />
+      <div>{/* <ObjectifGraph /> */}</div>
       <div className="MacroList">
         <MacroNutrimentsList />
       </div>
