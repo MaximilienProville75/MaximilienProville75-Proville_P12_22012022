@@ -14,7 +14,9 @@ function Dashboard() {
     <>
       <HeaderNav />
       <UserInfos />
-      <div>{/* <ObjectifGraph /> */}</div>
+      <div>
+        <ObjectifGraph />
+      </div>
       <div className="MacroList">
         <MacroNutrimentsList />
       </div>
