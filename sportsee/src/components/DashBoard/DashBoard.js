@@ -14,7 +14,7 @@ function Dashboard() {
     <>
       <HeaderNav />
       <UserInfos />
-      <div>
+      <div className="AverageSession">
         <ObjectifGraph />
       </div>
       <div className="MacroList">

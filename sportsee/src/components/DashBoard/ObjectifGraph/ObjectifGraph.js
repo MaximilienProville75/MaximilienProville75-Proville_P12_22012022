@@ -9,35 +9,36 @@ import {
   Legend,
   Label,
 } from "recharts";
+import "../ObjectifGraph/ObjectifGraph.css";
 
 const data = [
   {
     name: "L",
-    uv: 30,
+    min: 30,
   },
   {
     name: "M",
-    uv: 23,
+    min: 23,
   },
   {
     name: "M",
-    uv: 45,
+    min: 45,
   },
   {
     name: "J",
-    uv: 50,
+    min: 50,
   },
   {
     name: "V",
-    uv: 0,
+    min: 0,
   },
   {
     name: "S",
-    uv: 0,
+    min: 0,
   },
   {
     name: "S",
-    uv: 60,
+    min: 60,
   },
 ];
 
@@ -49,13 +50,26 @@ function ObjectifGraph() {
         height={260}
         data={data}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        backgroundColor="#FF0000"
+        background="#FF0000"
+        className="LineChart1"
       >
         <XAxis dataKey="name"></XAxis>
-        <YAxis />
+        {/* <YAxis /> */}
         <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="uv" stroke="#FF0000" />
+        {/* <Legend /> */}
+        <Line
+          type="monotone"
+          dataKey="min"
+          stroke="#FFFFFF"
+          strokeWidth="5"
+          dot={{ r: 0 }}
+          activeDot={{
+            fill: "#FFFFFF",
+            stroke: " 5px solid rgba(255, 255, 255, 0.198345)",
+            strokeWidth: 5,
+            r: 5,
+          }}
+        />
       </LineChart>
     </div>
   );
