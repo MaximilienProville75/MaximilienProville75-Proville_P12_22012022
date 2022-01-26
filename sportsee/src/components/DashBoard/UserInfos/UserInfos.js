@@ -6,7 +6,6 @@ import { getUserById } from "../../../models";
 const userIdInfo12 = getUserById(12);
 
 const infos12 = userIdInfo12.userInfos;
-console.log(infos12.firstName);
 
 function UserInfos() {
   return (
