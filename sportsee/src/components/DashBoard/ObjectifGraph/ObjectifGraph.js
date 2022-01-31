@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   Label,
+  Brush,
 } from "recharts";
 import "../ObjectifGraph/ObjectifGraph.css";
 
@@ -53,8 +54,11 @@ function ObjectifGraph() {
         background="#FF0000"
         className="LineChart1"
       >
-        <XAxis dataKey="name"></XAxis>
+        <XAxis dataKey="name" className="dataNaming">
+          <Label value="Pages of my website" offset={0} position="top" />
+        </XAxis>
         {/* <YAxis /> */}
+        {/* <Brush /> */}
         <Tooltip />
         {/* <Legend /> */}
         <Line
