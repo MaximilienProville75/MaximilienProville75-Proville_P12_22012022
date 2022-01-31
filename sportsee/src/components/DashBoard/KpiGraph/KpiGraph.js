@@ -35,13 +35,7 @@ function KpiGraph() {
         angleAxisId={0}
         tick={false}
       />
-      <RadialBar
-        background
-        clockWise
-        dataKey="value"
-        // cornerRadius={circleSize / 2}
-        fill="#FF0000"
-      />
+      <RadialBar background clockWise dataKey="value" fill="#FF0000" />
       <text
         x="50%"
         y="50%"

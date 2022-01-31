@@ -26,7 +26,7 @@ function DailyActivities() {
       <XAxis dataKey="day" />
       <YAxis orientation="right" />
       <Tooltip />
-      <Legend />
+      <Legend verticalAlign="top" horizontalAlign="right" />
       <Bar
         dataKey="kilogram"
         fill="#282D30"
