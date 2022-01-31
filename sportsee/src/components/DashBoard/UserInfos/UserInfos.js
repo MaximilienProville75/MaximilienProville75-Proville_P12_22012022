@@ -1,9 +1,9 @@
 import React from "react";
 import "../UserInfos/UserInfos.css";
 
-import { getUser } from "../../../service.js";
+import { getUserActivity } from "../../../service.js";
 
-const userIdInfo12 = getUser(12);
+const userIdInfo12 = getUserActivity(12);
 console.log(userIdInfo12);
 
 // const infos12 = userIdInfo12.userInfos;
