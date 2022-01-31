@@ -54,9 +54,11 @@ function ObjectifGraph() {
         background="#FF0000"
         className="LineChart1"
       >
-        <XAxis dataKey="name" className="dataNaming">
-          <Label value="Pages of my website" offset={0} position="top" />
-        </XAxis>
+        <XAxis
+          dataKey="name"
+          className="dataNaming"
+          tick={{ fill: "white", fontSize: 12 }}
+        ></XAxis>
         {/* <YAxis /> */}
         {/* <Brush /> */}
         <Tooltip />
