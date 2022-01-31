@@ -9,3 +9,15 @@
     left: 200px;
     top: 600px;
 }
+
+.PerformanceGraph{
+    position:absolute;
+    left: 350px;
+    top: 600px;
+}
+
+.kpiGraph{
+    position:absolute;
+    left: 700px;
+    top: 600px;
+}
