@@ -21,7 +21,7 @@ const data = [
 
 function DailyActivities() {
   return (
-    <BarChart width={830} height={320} data={data}>
+    <BarChart width={900} height={320} data={data}>
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
       <XAxis dataKey="day" />
       <YAxis orientation="right" />

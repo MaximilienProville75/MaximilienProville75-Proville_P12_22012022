@@ -17,17 +17,21 @@ function Dashboard() {
     <>
       <HeaderNav />
       <UserInfos />
-      <div className="DailyActivities">
-        <DailyActivities />
-      </div>
-      <div className="AverageSession">
-        <ObjectifGraph />
-      </div>
-      <div className="PerformanceGraph">
-        <RadarGraph />
-      </div>
-      <div className="kpiGraph">
-        <KpiGraph />
+      <div className="GraphList">
+        <div className="DailyActivities">
+          <DailyActivities />
+        </div>
+        <div className="ThreeGraphs">
+          <div className="AverageSession">
+            <ObjectifGraph />
+          </div>
+          <div className="PerformanceGraph">
+            <RadarGraph />
+          </div>
+          <div className="kpiGraph">
+            <KpiGraph />
+          </div>
+        </div>
       </div>
       <div className="MacroList">
         <MacroNutrimentsList />

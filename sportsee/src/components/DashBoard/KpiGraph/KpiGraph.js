@@ -1,105 +1,57 @@
 import React from "react";
-import { PieChart, Pie } from "recharts";
-
-// const data01 = [
-//   {
-//     name: "Group A",
-//     value: 400,
-//   },
-//   {
-//     name: "Group B",
-//     value: 300,
-//   },
-//   {
-//     name: "Group C",
-//     value: 300,
-//   },
-//   {
-//     name: "Group D",
-//     value: 200,
-//   },
-//   {
-//     name: "Group E",
-//     value: 278,
-//   },
-//   {
-//     name: "Group F",
-//     value: 189,
-//   },
-// ];
-// const data02 = [
-//   {
-//     name: "Group A",
-//     value: 2400,
-//   },
-//   {
-//     name: "Group B",
-//     value: 4567,
-//   },
-//   {
-//     name: "Group C",
-//     value: 1398,
-//   },
-//   {
-//     name: "Group D",
-//     value: 9800,
-//   },
-//   {
-//     name: "Group E",
-//     value: 3908,
-//   },
-//   {
-//     name: "Group F",
-//     value: 4800,
-//   },
-// ];
+import "./../KpiGraph/KpiGraph.css";
+import {
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  ResponsiveContainer,
+  PolarAngleAxis,
+} from "recharts";
 
 const data = [
   {
+    name: "l1",
     value: 12,
-  },
-];
-const data2 = [
-  {
-    value: 88,
   },
 ];
 
 function KpiGraph() {
   return (
-    <PieChart width={730} height={250}>
-      {/* <Pie
-        data={data01}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        outerRadius={50}
-        fill="#8884d8"
-      /> */}
-      <Pie
-        data={data2}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        innerRadius={60}
-        outerRadius={80}
-        fill="white"
-        label
+    <RadialBarChart
+      width={250}
+      height={250}
+      cx="50%"
+      cy="50%"
+      innerRadius={100}
+      outerRadius={100}
+      barSize={15}
+      data={data}
+      startAngle={90}
+      endAngle={-270}
+    >
+      <PolarAngleAxis
+        type="number"
+        domain={[0, 100]}
+        angleAxisId={0}
+        tick={false}
       />
-      <Pie
-        data={data}
+      <RadialBar
+        background
+        clockWise
         dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        innerRadius={60}
-        outerRadius={80}
-        fill="#82ca9d"
-        label
+        // cornerRadius={circleSize / 2}
+        fill="#FF0000"
       />
-    </PieChart>
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="progress-label"
+      >
+        12% de votre objectif
+      </text>
+    </RadialBarChart>
   );
 }
 
