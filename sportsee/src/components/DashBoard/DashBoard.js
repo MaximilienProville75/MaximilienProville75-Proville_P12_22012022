@@ -10,12 +10,16 @@ import MacroNutrimentsList from "./MacroNutriments/MacroNutrimentList";
 import ObjectifGraph from "./ObjectifGraph/ObjectifGraph";
 import RadarGraph from "./RadarGraph/RadarGraph";
 import KpiGraph from "./KpiGraph/KpiGraph";
+import DailyActivities from "./DailyActivity/DailyActivity";
 
 function Dashboard() {
   return (
     <>
       <HeaderNav />
       <UserInfos />
+      <div className="DailyActivities">
+        <DailyActivities />
+      </div>
       <div className="AverageSession">
         <ObjectifGraph />
       </div>
