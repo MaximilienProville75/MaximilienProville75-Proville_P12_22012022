@@ -2,3 +2,22 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px #00000005;
 }
+
+.kpiTitle{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.percentageKpi{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px; 
+}
+
+.descriptionKpi{
+    color: #282D30;
+    font-size: 18px;
+}

@@ -59,10 +59,7 @@ function ObjectifGraph() {
           className="dataNaming"
           tick={{ fill: "white", fontSize: 12 }}
         ></XAxis>
-        {/* <YAxis /> */}
-        {/* <Brush /> */}
         <Tooltip />
-        {/* <Legend /> */}
         <Line
           type="monotone"
           dataKey="min"

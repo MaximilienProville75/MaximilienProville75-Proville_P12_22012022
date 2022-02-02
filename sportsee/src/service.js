@@ -1,7 +1,8 @@
 const getUser = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}`);
-    return await res.json();
+    const formatedData = await res.json();
+    return formatedData.data;
   } catch (err) {
     console.log(err);
   }

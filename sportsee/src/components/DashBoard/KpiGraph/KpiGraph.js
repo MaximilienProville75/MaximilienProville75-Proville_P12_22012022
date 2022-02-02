@@ -29,6 +29,15 @@ function KpiGraph() {
       startAngle={90}
       endAngle={-270}
     >
+      <text
+        x="12%"
+        y="5%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="kpiTitle"
+      >
+        Score
+      </text>
       <PolarAngleAxis
         type="number"
         domain={[0, 100]}
@@ -38,12 +47,21 @@ function KpiGraph() {
       <RadialBar background clockWise dataKey="value" fill="#FF0000" />
       <text
         x="50%"
+        y="40%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="percentageKpi"
+      >
+        12%
+      </text>
+      <text
+        x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        className="progress-label"
+        className="descriptionKpi"
       >
-        12% de votre objectif
+        de votre objectif
       </text>
     </RadialBarChart>
   );

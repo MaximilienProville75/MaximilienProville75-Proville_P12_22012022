@@ -13,6 +13,8 @@ import KpiGraph from "./KpiGraph/KpiGraph";
 import DailyActivities from "./DailyActivity/DailyActivity";
 
 function Dashboard() {
+  //TODO Realiser les fetch et transferer de props par composant
+
   return (
     <>
       <HeaderNav />
@@ -33,9 +35,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="MacroList">
-        <MacroNutrimentsList />
-      </div>
+      <div className="MacroList">{/* <MacroNutrimentsList /> */}</div>
       <VerticalNav />
     </>
   );

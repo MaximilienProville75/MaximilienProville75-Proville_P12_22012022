@@ -1,4 +1,5 @@
 import React from "react";
+import "./../DailyActivity/DailyActivity.css";
 import {
   BarChart,
   Bar,
@@ -21,12 +22,35 @@ const data = [
 
 function DailyActivities() {
   return (
-    <BarChart width={900} height={320} data={data}>
+    <BarChart
+      width={900}
+      height={320}
+      data={data}
+      margin={{ top: 30, bottom: 0 }}
+    >
+      <text
+        x="10%"
+        y="5%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="dailyActivityText"
+      >
+        Activité quotidienne
+      </text>
+      <Legend
+        layout="horizontal"
+        verticalAlign="top"
+        align="right"
+        wrapperStyle={{
+          position: "relative",
+          top: "-320px",
+        }}
+        iconType="circle"
+      />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
       <XAxis dataKey="day" />
       <YAxis orientation="right" />
       <Tooltip />
-      <Legend verticalAlign="top" horizontalAlign="right" />
       <Bar
         dataKey="kilogram"
         fill="#282D30"
