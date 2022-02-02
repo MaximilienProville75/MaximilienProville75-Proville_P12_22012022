@@ -8,14 +8,9 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
-const data = [
-  {
-    name: "l1",
-    value: 12,
-  },
-];
+function KpiGraph(props) {
+  const data = [...new Array(props)];
 
-function KpiGraph() {
   return (
     <RadialBarChart
       width={250}
@@ -44,7 +39,7 @@ function KpiGraph() {
         angleAxisId={0}
         tick={false}
       />
-      <RadialBar background clockWise dataKey="value" fill="#FF0000" />
+      <RadialBar background clockWise dataKey="userScore" fill="#FF0000" />
       <text
         x="50%"
         y="40%"
@@ -52,7 +47,7 @@ function KpiGraph() {
         dominantBaseline="middle"
         className="percentageKpi"
       >
-        12%
+        {props.userScore}%
       </text>
       <text
         x="50%"

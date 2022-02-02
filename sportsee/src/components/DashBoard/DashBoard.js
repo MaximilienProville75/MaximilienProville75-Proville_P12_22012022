@@ -15,19 +15,27 @@ import DailyActivities from "./DailyActivity/DailyActivity";
 
 const withRouter = (WrappedComponent) => (props) => {
   const params = useParams();
-  console.log(params);
   return <WrappedComponent {...props} params={params} />;
 };
 
 function Dashboard(props) {
-  //TODO Realiser les fetch et transferer de props par composant
   const [user, setUser] = useState(" ");
+  const [userScore, setUserScore] = useState("");
+  const [userKeyData, setUserKeyData] = useState("");
   const [userActivity, setUserActivity] = React.useState(" ");
+
+  //* ----------------------------------------------------------
   const idUrlUser = props.params.id;
 
   React.useEffect(() => {
     Model.getUser(idUrlUser).then((res) => {
       setUser(res.userInfos);
+    });
+    Model.getUser(idUrlUser).then((res) => {
+      setUserScore(res.score);
+    });
+    Model.getUser(idUrlUser).then((res) => {
+      setUserKeyData(res.keyData);
     });
 
     //? getUserActivity --> ........
@@ -36,6 +44,8 @@ function Dashboard(props) {
       setUserActivity(res.sessions);
     });
   }, []);
+
+  console.log(userKeyData);
 
   return (
     <>
@@ -53,11 +63,13 @@ function Dashboard(props) {
             <RadarGraph />
           </div>
           <div className="kpiGraph">
-            <KpiGraph />
+            <KpiGraph userScore={userScore} />
           </div>
         </div>
       </div>
-      <div className="MacroList">{/* <MacroNutrimentsList /> */}</div>
+      <div className="MacroList">
+        <MacroNutrimentsList userKeyData={userKeyData} />
+      </div>
       <VerticalNav />
     </>
   );

@@ -1,20 +1,14 @@
-// import React from "react";
-// import MacroNutriments from "./MacroNutriments";
+import React from "react";
+import MacroNutriments from "./MacroNutriments";
 
-// import { getUserById } from "../../../models";
+function MacroNutrimentsList(props) {
+  console.log(props.userKeyData.entries);
+  const arrData = Object.entries(props.userKeyData);
+  console.log(arrData);
 
-// // const userIdInfo12 = getUserById(1);
-// // const keyData = userIdInfo12.keyData;
-// // const lengthArr = Object.values(keyData);
-// // const keyValues = Object.keys(keyData);
+  return arrData.map((item) => {
+    return <MacroNutriments dataInfos={item} />;
+  });
+}
 
-// function MacroNutrimentsList() {
-//   let count = 0;
-//   const card = keyValues.map((y) => {
-//     count++;
-//     return <MacroNutriments itemsValue={lengthArr[count - 1]} itemsKey={y} />;
-//   });
-//   return card;
-// }
-
-// export default MacroNutrimentsList;
+export default MacroNutrimentsList;

@@ -44,7 +44,7 @@ const data = [
 ];
 
 function ObjectifGraph(props) {
-  console.log(props.day);
+  // console.log(props.day);
 
   return (
     <div>
