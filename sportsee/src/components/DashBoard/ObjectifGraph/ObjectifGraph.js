@@ -43,7 +43,9 @@ const data = [
   },
 ];
 
-function ObjectifGraph() {
+function ObjectifGraph(props) {
+  console.log(props.day);
+
   return (
     <div>
       <LineChart

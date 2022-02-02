@@ -9,9 +9,23 @@ export class Model {
     const result = await service.getUser(userId);
     return {
       id: result.id,
-      keyData: result.keyData,
-      score: (result.score || result.todayScore) * 100,
       userInfos: result.userInfos,
+      score: (result.score || result.todayScore) * 100,
+      keyData: result.keyData,
+    };
+  }
+  static async getUserActivity(userId) {
+    const result = await service.getUserActivity(userId);
+    return {
+      id: result.userId,
+      sessions: result.sessions,
+    };
+  }
+  static async getUserAvgSession(userId) {
+    const result = await service.getUserAvgSession(userId);
+    return {
+      id: result.userId,
+      sessions: result.sessions,
     };
   }
 }

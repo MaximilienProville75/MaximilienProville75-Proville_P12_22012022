@@ -11,7 +11,8 @@ const getUser = async (userId) => {
 const getUserActivity = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}/activity`);
-    return await res.json();
+    const formatedData = await res.json();
+    return formatedData.data;
   } catch (err) {
     console.log(err);
   }
@@ -22,7 +23,8 @@ const getUserAvgSession = async (userId) => {
     const res = await fetch(
       `http://localhost:3000/user/${userId}/average-sessions`
     );
-    return await res.json();
+    const formatedData = await res.json();
+    return formatedData.data;
   } catch (err) {
     console.log(err);
   }
@@ -31,7 +33,8 @@ const getUserAvgSession = async (userId) => {
 const getUserPerformance = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}/performance`);
-    return await res.json();
+    const formatedData = await res.json();
+    return formatedData.data;
   } catch (err) {
     console.log(err);
   }
