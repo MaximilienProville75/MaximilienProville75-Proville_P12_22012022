@@ -7,3 +7,11 @@
 .dataNaming{
     background-color: white;
 }
+
+.toolTipAvgAct{
+    background-color: white;
+    padding: 5px;
+    font-size: 10px;
+
+    font-family: 'Roboto', sans-serif;
+}

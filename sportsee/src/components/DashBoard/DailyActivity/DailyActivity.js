@@ -10,17 +10,33 @@ import {
   Legend,
 } from "recharts";
 
-const data = [
-  { day: "1", kilogram: 80, calories: 240 },
-  { day: "2", kilogram: 80, calories: 220 },
-  { day: "3", kilogram: 81, calories: 280 },
-  { day: "4", kilogram: 81, calories: 290 },
-  { day: "5", kilogram: 80, calories: 160 },
-  { day: "6", kilogram: 78, calories: 162 },
-  { day: "7", kilogram: 76, calories: 390 },
-];
+const generateData = (props) => {
+  const data = Object.values(props.data);
+  let dataArrDate = [];
+  // data.forEach((data) => {
+  //   dataArrDate.push(data.day);
+  //   for (let i = 0; dataArrDate.length > i; i++) {
+  //     data.day = dataArrDate[i] = i + 1;
+  //   }
+  // });
+  return data;
+};
 
-function DailyActivities() {
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="toolTipActivityDaily">
+        <p className="label">{`${payload[0].value}kg`}</p>
+        <p className="intro">{`${payload[1].value}Kcal`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+const DailyActivities = (props) => {
+  const data = generateData(props);
   return (
     <BarChart
       width={900}
@@ -50,7 +66,7 @@ function DailyActivities() {
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
       <XAxis dataKey="day" />
       <YAxis orientation="right" />
-      <Tooltip />
+      <Tooltip content={<CustomTooltip />} />
       <Bar
         dataKey="kilogram"
         fill="#282D30"
@@ -65,6 +81,6 @@ function DailyActivities() {
       />
     </BarChart>
   );
-}
+};
 
 export default DailyActivities;

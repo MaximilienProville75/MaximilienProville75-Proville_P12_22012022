@@ -12,40 +12,49 @@ import {
 } from "recharts";
 import "../ObjectifGraph/ObjectifGraph.css";
 
-const data = [
-  {
-    name: "L",
-    min: 30,
-  },
-  {
-    name: "M",
-    min: 23,
-  },
-  {
-    name: "M",
-    min: 45,
-  },
-  {
-    name: "J",
-    min: 50,
-  },
-  {
-    name: "V",
-    min: 0,
-  },
-  {
-    name: "S",
-    min: 0,
-  },
-  {
-    name: "S",
-    min: 60,
-  },
-];
+function generateData(props) {
+  const data = Object.values(props.datas);
+  data.forEach((d) => {
+    if (d.day === 1) {
+      d.day = "L";
+    }
+    if (d.day === 2) {
+      d.day = "M";
+    }
+    if (d.day === 3) {
+      d.day = "M";
+    }
+    if (d.day === 4) {
+      d.day = "J";
+    }
+    if (d.day === 5) {
+      d.day = "V";
+    }
+    if (d.day === 6) {
+      d.day = "S";
+    }
+    if (d.day === 7) {
+      d.day = "S";
+    }
+    return d;
+  });
+  return data;
+}
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="toolTipAvgAct">
+        <p className="label">{`${payload[0].value} min`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 function ObjectifGraph(props) {
-  // console.log(props.day);
-
+  const data = generateData(props);
   return (
     <div>
       <LineChart
@@ -57,14 +66,14 @@ function ObjectifGraph(props) {
         className="LineChart1"
       >
         <XAxis
-          dataKey="name"
+          dataKey="day"
           className="dataNaming"
           tick={{ fill: "white", fontSize: 12 }}
         ></XAxis>
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} />
         <Line
           type="monotone"
-          dataKey="min"
+          dataKey="sessionLength"
           stroke="#FFFFFF"
           strokeWidth="5"
           dot={{ r: 0 }}

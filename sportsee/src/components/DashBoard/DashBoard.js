@@ -21,8 +21,10 @@ const withRouter = (WrappedComponent) => (props) => {
 function Dashboard(props) {
   const [user, setUser] = useState(" ");
   const [userScore, setUserScore] = useState("");
+  const [userActivity, setUserActivity] = useState(" ");
   const [userKeyData, setUserKeyData] = useState("");
-  const [userActivity, setUserActivity] = React.useState(" ");
+  const [userAvgActivity, setUserAvgActivity] = useState(" ");
+  const [userPerformance, setUserPerformance] = useState(" ");
 
   //* ----------------------------------------------------------
   const idUrlUser = props.params.id;
@@ -38,14 +40,21 @@ function Dashboard(props) {
       setUserKeyData(res.keyData);
     });
 
-    //? getUserActivity --> ........
+    //? getsetUserAvgActivity --> ........
 
-    Model.getUserAvgSession(idUrlUser).then((res) => {
+    Model.getUserActivity(idUrlUser).then((res) => {
       setUserActivity(res.sessions);
     });
-  }, []);
 
-  console.log(userKeyData);
+    Model.getUserAvgSession(idUrlUser).then((res) => {
+      setUserAvgActivity(res.sessions);
+    });
+
+    //? Performance <--------->
+    Model.getUserPerformance(idUrlUser).then((res) => {
+      setUserPerformance(res.data);
+    });
+  }, []);
 
   return (
     <>
@@ -53,14 +62,14 @@ function Dashboard(props) {
       <UserInfos user={user} />
       <div className="GraphList">
         <div className="DailyActivities">
-          <DailyActivities />
+          <DailyActivities data={userActivity} />
         </div>
         <div className="ThreeGraphs">
           <div className="AverageSession">
-            <ObjectifGraph datas={userActivity} />
+            <ObjectifGraph datas={userAvgActivity} />
           </div>
           <div className="PerformanceGraph">
-            <RadarGraph />
+            <RadarGraph userPerf={userPerformance} />
           </div>
           <div className="kpiGraph">
             <KpiGraph userScore={userScore} />

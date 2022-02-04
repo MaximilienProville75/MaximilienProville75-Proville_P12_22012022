@@ -10,34 +10,36 @@ import {
 
 import "./../RadarGraph/RadarGraph.css";
 
-const data = [
-  {
-    subject: "cardio",
-    A: 80,
-  },
-  {
-    subject: "energy",
-    A: 120,
-  },
-  {
-    subject: "endurance",
-    A: 140,
-  },
-  {
-    subject: "strength",
-    A: 50,
-  },
-  {
-    subject: "speed",
-    A: 200,
-  },
-  {
-    subject: "intensity",
-    A: 90,
-  },
-];
+function generateData(props) {
+  const data = Object.values(props.userPerf);
+  data.forEach((d) => {
+    if (d.kind === 1) {
+      d.kind = "cardio";
+    }
+    if (d.kind === 2) {
+      d.kind = "energy";
+    }
+    if (d.kind === 3) {
+      d.kind = "endurance";
+    }
+    if (d.kind === 4) {
+      d.kind = "strength";
+    }
+    if (d.kind === 5) {
+      d.kind = "speed";
+    }
+    if (d.kind === 6) {
+      d.kind = "intensity";
+    }
 
-function RadarGraph() {
+    return d;
+  });
+  return data;
+}
+
+function RadarGraph(props) {
+  const data = generateData(props);
+
   return (
     <RadarChart
       outerRadius={90}
@@ -46,14 +48,9 @@ function RadarGraph() {
       data={data}
       className="radarCharts"
     >
-      <PolarGrid />
-      <PolarAngleAxis
-        dataKey="subject"
-        tick={{ fill: "white", fontSize: 12 }}
-      />
-      {/* <PolarRadiusAxis angle={30} domain={[0, 150]} /> */}
-      <Radar name="Mike" dataKey="A" fill="#FF0101" fillOpacity={0.7} />
-      {/* <Legend /> */}
+      <PolarGrid tick={{ fill: "red" }} />
+      <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 12 }} />
+      <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
     </RadarChart>
   );
 }

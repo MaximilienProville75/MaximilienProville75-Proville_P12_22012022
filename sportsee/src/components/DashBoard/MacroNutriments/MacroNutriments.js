@@ -18,7 +18,6 @@ function generateImgSrc(props) {
   if (props.dataInfos[0] === "lipidCount") {
     return lipidIntact;
   }
-  console.log(props);
 }
 
 function generateValue(props) {

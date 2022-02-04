@@ -28,4 +28,12 @@ export class Model {
       sessions: result.sessions,
     };
   }
+  static async getUserPerformance(userId) {
+    const result = await service.getUserPerformance(userId);
+    return {
+      id: result.userId,
+      kind: result.kind,
+      data: result.data,
+    };
+  }
 }
