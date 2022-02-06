@@ -12,15 +12,18 @@ import {
 
 const generateData = (props) => {
   const data = Object.values(props.data);
-  let dataArrDate = [];
-  // data.forEach((data) => {
-  //   dataArrDate.push(data.day);
-  //   for (let i = 0; dataArrDate.length > i; i++) {
-  //     data.day = dataArrDate[i] = i + 1;
-  //   }
-  // });
   return data;
 };
+
+// const generateDValue = (props) => {
+//   let dataArrDate = [];
+//   props.forEach((data) => {
+//     dataArrDate.push(data.day);
+//     for (let i = 0; dataArrDate.length > i; i++) {
+//       data.day = dataArrDate[i] = i + 1;
+//     }
+//   });
+// };
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -37,6 +40,8 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const DailyActivities = (props) => {
   const data = generateData(props);
+
+  console.log(data);
   return (
     <BarChart
       width={900}

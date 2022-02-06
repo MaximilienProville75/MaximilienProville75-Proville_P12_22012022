@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   LineChart,
   Line,
@@ -55,6 +56,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 function ObjectifGraph(props) {
   const data = generateData(props);
+
   return (
     <div>
       <LineChart
@@ -88,5 +90,12 @@ function ObjectifGraph(props) {
     </div>
   );
 }
+
+generateData.propTypes = {
+  day: PropTypes.string,
+};
+CustomTooltip.propTypes = {
+  payload: PropTypes.array,
+};
 
 export default ObjectifGraph;

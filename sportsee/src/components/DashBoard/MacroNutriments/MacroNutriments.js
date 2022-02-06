@@ -5,6 +5,8 @@ import proteinIntact from "/Users/maximilienproville/Desktop/FORMATION Openclass
 import carbsIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/carbs-icon.png";
 import lipidIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/fat-icon.png";
 
+import PropTypes from "prop-types";
+
 function generateImgSrc(props) {
   if (props.dataInfos[0] === "calorieCount") {
     return caloriesIntact;
@@ -60,5 +62,13 @@ function MacroNutriments(props) {
     </div>
   );
 }
+
+generateImgSrc.propTypes = {
+  dataInfos: PropTypes.array,
+};
+
+MacroNutriments.propTypes = {
+  dataInfos: PropTypes.array,
+};
 
 export default MacroNutriments;
