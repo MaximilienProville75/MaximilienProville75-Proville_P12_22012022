@@ -8,9 +8,11 @@ import {
   Legend,
 } from "recharts";
 
+import propTypes from "prop-types";
+
 import "./../RadarGraph/RadarGraph.css";
 
-function generateData(props) {
+const generateData = (props) => {
   const data = Object.values(props.userPerf);
   data.forEach((d) => {
     if (d.kind === 1) {
@@ -35,9 +37,9 @@ function generateData(props) {
     return d;
   });
   return data;
-}
+};
 
-function RadarGraph(props) {
+const RadarGraph = (props) => {
   const data = generateData(props);
 
   return (
@@ -53,6 +55,10 @@ function RadarGraph(props) {
       <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
     </RadarChart>
   );
-}
+};
+
+RadarGraph.propTypes = {
+  userPerf: propTypes.array,
+};
 
 export default RadarGraph;

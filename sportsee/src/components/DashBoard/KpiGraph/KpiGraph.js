@@ -1,5 +1,6 @@
 import React from "react";
 import "./../KpiGraph/KpiGraph.css";
+import propTypes from "prop-types";
 import {
   RadialBarChart,
   RadialBar,
@@ -39,7 +40,13 @@ function KpiGraph(props) {
         angleAxisId={0}
         tick={false}
       />
-      <RadialBar background clockWise dataKey="userScore" fill="#FF0000" />
+      <RadialBar
+        background
+        clockWise
+        dataKey="userScore"
+        fill="#FF0000"
+        cornerRadius={15}
+      />
       <text
         x="50%"
         y="40%"
@@ -61,5 +68,9 @@ function KpiGraph(props) {
     </RadialBarChart>
   );
 }
+
+KpiGraph.propTypes = {
+  userScore: propTypes.number,
+};
 
 export default KpiGraph;

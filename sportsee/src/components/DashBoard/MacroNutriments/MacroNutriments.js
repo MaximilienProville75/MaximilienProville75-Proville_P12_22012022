@@ -1,11 +1,11 @@
 import React from "react";
 import "../MacroNutriments/MacroNutriments.css";
-import caloriesIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/calories-icon.png";
-import proteinIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/protein-icon.png";
-import carbsIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/carbs-icon.png";
-import lipidIntact from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/fat-icon.png";
+import propTypes from "prop-types";
 
-import PropTypes from "prop-types";
+import caloriesIntact from "../../../assets/calories-icon.png";
+import proteinIntact from "../../../assets/protein-icon.png";
+import carbsIntact from "../../../assets/carbs-icon.png";
+import lipidIntact from "../../../assets/fat-icon.png";
 
 function generateImgSrc(props) {
   if (props.dataInfos[0] === "calorieCount") {
@@ -63,12 +63,8 @@ function MacroNutriments(props) {
   );
 }
 
-generateImgSrc.propTypes = {
-  dataInfos: PropTypes.array,
-};
-
 MacroNutriments.propTypes = {
-  dataInfos: PropTypes.array,
+  dataInfos: propTypes.array,
 };
 
 export default MacroNutriments;

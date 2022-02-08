@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import {
   LineChart,
   Line,
@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import "../ObjectifGraph/ObjectifGraph.css";
 
-function generateData(props) {
+const generateData = (props) => {
   const data = Object.values(props.datas);
   data.forEach((d) => {
     if (d.day === 1) {
@@ -40,7 +40,7 @@ function generateData(props) {
     return d;
   });
   return data;
-}
+};
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -54,9 +54,9 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-function ObjectifGraph(props) {
-  const data = generateData(props);
-
+const ObjectifGraph = (datas) => {
+  const data = generateData(datas);
+  console.log(data);
   return (
     <div>
       <LineChart
@@ -89,13 +89,14 @@ function ObjectifGraph(props) {
       </LineChart>
     </div>
   );
-}
-
-generateData.propTypes = {
-  day: PropTypes.string,
 };
+
 CustomTooltip.propTypes = {
-  payload: PropTypes.array,
+  payload: propTypes.array,
+};
+
+ObjectifGraph.propTypes = {
+  datas: propTypes.array,
 };
 
 export default ObjectifGraph;

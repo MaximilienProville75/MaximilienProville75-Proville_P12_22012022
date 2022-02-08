@@ -11,7 +11,17 @@ import {
 } from "recharts";
 
 const generateData = (props) => {
+  let dataArrDate = [];
   const data = Object.values(props.data);
+
+  // data.map((item) => {
+  //   dataArrDate.push(item.day);
+  //   for (let i = 0; dataArrDate.length > i; i++) {
+  //     item.day = dataArrDate[i] = i + 1;
+  //   }
+  // });
+  // console.log(dataArrDate);
+
   return data;
 };
 
@@ -31,7 +41,6 @@ const CustomTooltip = ({ active, payload, label }) => {
 const DailyActivities = (props) => {
   const data = generateData(props);
 
-  console.log(data);
   return (
     <BarChart
       width={900}

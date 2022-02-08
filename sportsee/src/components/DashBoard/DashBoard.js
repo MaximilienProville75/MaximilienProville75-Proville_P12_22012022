@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import propTypes from "prop-types";
 import "./DashBoard.css";
 
 import { Model } from "../../model";
@@ -18,7 +19,7 @@ const withRouter = (WrappedComponent) => (props) => {
   return <WrappedComponent {...props} params={params} />;
 };
 
-function Dashboard(props) {
+const Dashboard = (props) => {
   const [user, setUser] = useState(" ");
   const [userScore, setUserScore] = useState("");
   const [userActivity, setUserActivity] = useState(" ");
@@ -59,7 +60,7 @@ function Dashboard(props) {
   return (
     <>
       <HeaderNav />
-      <UserInfos user={user} />
+      <UserInfos infos={user} />
       <div className="GraphList">
         <div className="DailyActivities">
           <DailyActivities data={userActivity} />
@@ -82,6 +83,6 @@ function Dashboard(props) {
       <VerticalNav />
     </>
   );
-}
+};
 
 export default withRouter(Dashboard);
