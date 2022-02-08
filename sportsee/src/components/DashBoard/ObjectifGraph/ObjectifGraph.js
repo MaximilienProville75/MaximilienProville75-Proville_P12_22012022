@@ -56,28 +56,46 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const ObjectifGraph = (datas) => {
   const data = generateData(datas);
-  console.log(data);
+
   return (
     <div>
       <LineChart
         width={260}
         height={250}
         data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        margin={{ top: 40, right: 1, left: 5, bottom: 5 }}
         background="#FF0000"
         className="LineChart1"
       >
         <XAxis
           dataKey="day"
           className="dataNaming"
-          tick={{ fill: "white", fontSize: 12 }}
+          tick={{ fill: "white", fontSize: 15 }}
         ></XAxis>
         <Tooltip content={<CustomTooltip />} />
+        <text
+          x="32%"
+          y="15%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="objectifTitle"
+        >
+          Durée moyenne des
+        </text>
+        <text
+          x="17%"
+          y="20%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="objectifTitle"
+        >
+          sessions
+        </text>
         <Line
           type="monotone"
           dataKey="sessionLength"
           stroke="#FFFFFF"
-          strokeWidth="5"
+          strokeWidth="3"
           dot={{ r: 0 }}
           activeDot={{
             fill: "#FFFFFF",

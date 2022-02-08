@@ -15,3 +15,10 @@
 
     font-family: 'Roboto', sans-serif;
 }
+
+.objectifTitle{
+    font-size: 15px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}

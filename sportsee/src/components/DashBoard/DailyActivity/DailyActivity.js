@@ -46,7 +46,7 @@ const DailyActivities = (props) => {
       width={900}
       height={320}
       data={data}
-      margin={{ top: 30, bottom: 0 }}
+      margin={{ top: 30, bottom: 20 }}
     >
       <text
         x="10%"
@@ -68,7 +68,7 @@ const DailyActivities = (props) => {
         iconType="circle"
       />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
-      <XAxis dataKey="day" />
+      <XAxis dataKey="day" tickSize />
       <YAxis orientation="right" />
       <Tooltip content={<CustomTooltip />} />
       <Bar
