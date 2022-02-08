@@ -15,16 +15,6 @@ const generateData = (props) => {
   return data;
 };
 
-// const generateDValue = (props) => {
-//   let dataArrDate = [];
-//   props.forEach((data) => {
-//     dataArrDate.push(data.day);
-//     for (let i = 0; dataArrDate.length > i; i++) {
-//       data.day = dataArrDate[i] = i + 1;
-//     }
-//   });
-// };
-
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (

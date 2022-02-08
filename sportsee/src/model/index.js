@@ -19,6 +19,7 @@ export class Model {
     return {
       id: result.userId,
       sessions: result.sessions,
+      lol: result.sessions.day,
     };
   }
   static async getUserAvgSession(userId) {
