@@ -1,13 +1,7 @@
 import React from "react";
 import "./../KpiGraph/KpiGraph.css";
 import propTypes from "prop-types";
-import {
-  RadialBarChart,
-  RadialBar,
-  Legend,
-  ResponsiveContainer,
-  PolarAngleAxis,
-} from "recharts";
+import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
 const KpiGraph = (props) => {
   const data = [...new Array(props)];
@@ -24,10 +18,11 @@ const KpiGraph = (props) => {
       data={data}
       startAngle={90}
       endAngle={-270}
+      className="scoreGraph"
     >
       <text
-        x="12%"
-        y="5%"
+        x="13%"
+        y="6%"
         textAnchor="middle"
         dominantBaseline="middle"
         className="kpiTitle"

@@ -1,23 +1,31 @@
-# Getting Started with Create React App
+# Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
 
-## Available Scripts
+- [NodeJs(v16.13.2)]
+- [npm]
 
-In the project directory, you can run:
+### Installing and Setting back-end
 
-### `npm start`
+- Clone this [repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) to your local machine
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Inside your back-end repository, install the required dependencies:
+  `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Launch your server on port 3000 (default port):
+  `npm run start`
 
-### `npm test`
+### Installing and Setting front-end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone this [repository](https://github.com/MaximilienProville75/Proville_P11_29112021-) to your local machine
+
+- Inside your front-end repository, install dependencies:
+  `npm install`
+
+- Launch your front-end repository on port 3001:
+  `npm start`
+
+Front-end is now rendered at URL `http://localhost:3001`
 
 ### `npm run build`
 

@@ -4,6 +4,9 @@
     border-radius: 5px;
 }
 
+
+
+
 .dataNaming{
     background-color: white;
 }
@@ -18,7 +21,6 @@
 
 .objectifTitle{
     font-size: 15px;
-    color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }

@@ -51,7 +51,6 @@ function MacroNutriments(props) {
       <div className="MacoInfosImg">
         <img src={generateImgSrc(props)} alt="bla" />
         <div className="MacoInfos">
-          {/* Infos from data KeyData */}
           <p className="MacroValue">
             {props.dataInfos[1]}
             {generateValue(props)}

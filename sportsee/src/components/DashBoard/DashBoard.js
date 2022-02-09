@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import propTypes from "prop-types";
 import "./DashBoard.css";
 
 import { Model } from "../../model";
@@ -14,7 +13,7 @@ import RadarGraph from "./RadarGraph/RadarGraph";
 import KpiGraph from "./KpiGraph/KpiGraph";
 import DailyActivities from "./DailyActivity/DailyActivity";
 
-const Dashboard = (props) => {
+const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(" ");
   const [userScore, setUserScore] = useState("");
@@ -65,7 +64,7 @@ const Dashboard = (props) => {
     <>
       <HeaderNav />
       {isLoading ? (
-        <div>...Loading</div>
+        <div>Cannot Get this user</div>
       ) : (
         <>
           <UserInfos infos={user} />
@@ -94,6 +93,4 @@ const Dashboard = (props) => {
     </>
   );
 };
-
-// export default withRouter(Dashboard);
 export default Dashboard;

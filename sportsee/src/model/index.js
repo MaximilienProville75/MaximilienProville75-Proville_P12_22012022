@@ -16,7 +16,6 @@ export class Model {
   }
   static async getUserActivity(userId) {
     const result = await service.getUserActivity(userId);
-    console.log(result.sessions);
     return {
       id: result.userId,
       sessions: result.sessions,

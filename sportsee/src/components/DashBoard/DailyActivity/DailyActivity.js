@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import "./../DailyActivity/DailyActivity.css";
 import {
   BarChart,
@@ -15,7 +16,7 @@ const generateData = (props) => {
   return data;
 };
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="toolTipActivityDaily">
@@ -27,18 +28,35 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
+const renderLegend = (props) => {
+  const { payload } = props;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+      }}
+    >
+      <div>Poids (Kg)</div>
+      <div>Calories brulees (Kcal)</div>
+    </div>
+  );
+};
+
 const DailyActivities = (props) => {
   const data = generateData(props);
 
   return (
     <BarChart
-      width={900}
-      height={320}
+      width={800}
+      height={300}
       data={data}
-      margin={{ top: 30, bottom: 20 }}
+      margin={{ top: 30, bottom: 20, left: 25, right: 10 }}
+      className="barCharts"
     >
       <text
-        x="10%"
+        x="13%"
         y="5%"
         textAnchor="middle"
         dominantBaseline="middle"
@@ -52,28 +70,49 @@ const DailyActivities = (props) => {
         align="right"
         wrapperStyle={{
           position: "relative",
-          top: "-320px",
+          top: "-300px",
         }}
         iconType="circle"
+
+        // content={renderLegend}
       />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
-      <XAxis dataKey="day" tickSize tick />
-      <YAxis orientation="right" domain={["dataMin - 50", "dataMax + 20"]} />
+      <XAxis
+        dataKey="day"
+        tickSize
+        className="dayLight"
+        tick={{ fill: "#9B9EAC", fontSize: 17 }}
+        axisLine={false}
+        dy={20}
+      />
+      <YAxis
+        orientation="right"
+        tick={{ fill: "#9B9EAC", fontSize: 17 }}
+        axisLine={false}
+        tickLine={false}
+        dx={20}
+      />
       <Tooltip content={<CustomTooltip />} />
       <Bar
         dataKey="kilogram"
         fill="#282D30"
         barSize={10}
         radius={[3.5, 3.5, 0, 0]}
+        name="Poids (Kg)"
       />
       <Bar
         dataKey="calories"
         fill="#E60000"
         barSize={10}
         radius={[3.5, 3.5, 0, 0]}
+        name="Calories brûlées (kCal)"
       />
     </BarChart>
   );
+};
+
+DailyActivities.propTypes = {
+  data: propTypes.arrayOf(propTypes.object),
 };
 
 export default DailyActivities;
