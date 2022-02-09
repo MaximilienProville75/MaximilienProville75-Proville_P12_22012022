@@ -11,17 +11,7 @@ import {
 } from "recharts";
 
 const generateData = (props) => {
-  let dataArrDate = [];
-  const data = Object.values(props.data);
-
-  // data.map((item) => {
-  //   dataArrDate.push(item.day);
-  //   for (let i = 0; dataArrDate.length > i; i++) {
-  //     item.day = dataArrDate[i] = i + 1;
-  //   }
-  // });
-  // console.log(dataArrDate);
-
+  const data = props.data.map((item, idx) => ({ ...item, day: idx + 1 }));
   return data;
 };
 
@@ -34,7 +24,6 @@ const CustomTooltip = ({ active, payload, label }) => {
       </div>
     );
   }
-
   return null;
 };
 
@@ -68,8 +57,8 @@ const DailyActivities = (props) => {
         iconType="circle"
       />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
-      <XAxis dataKey="day" tickSize />
-      <YAxis orientation="right" />
+      <XAxis dataKey="day" tickSize tick />
+      <YAxis orientation="right" domain={["dataMin - 50", "dataMax + 20"]} />
       <Tooltip content={<CustomTooltip />} />
       <Bar
         dataKey="kilogram"

@@ -35,7 +35,7 @@ const generateData = (props) => {
       d.day = "S";
     }
     if (d.day === 7) {
-      d.day = "S";
+      d.day = "D";
     }
     return d;
   });

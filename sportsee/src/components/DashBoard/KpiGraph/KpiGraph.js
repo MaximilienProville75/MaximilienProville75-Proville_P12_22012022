@@ -9,7 +9,7 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
-function KpiGraph(props) {
+const KpiGraph = (props) => {
   const data = [...new Array(props)];
 
   return (
@@ -67,7 +67,7 @@ function KpiGraph(props) {
       </text>
     </RadialBarChart>
   );
-}
+};
 
 KpiGraph.propTypes = {
   userScore: propTypes.number,

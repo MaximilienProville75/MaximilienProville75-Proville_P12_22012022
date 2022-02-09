@@ -14,12 +14,8 @@ import RadarGraph from "./RadarGraph/RadarGraph";
 import KpiGraph from "./KpiGraph/KpiGraph";
 import DailyActivities from "./DailyActivity/DailyActivity";
 
-const withRouter = (WrappedComponent) => (props) => {
-  const params = useParams();
-  return <WrappedComponent {...props} params={params} />;
-};
-
 const Dashboard = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(" ");
   const [userScore, setUserScore] = useState("");
   const [userActivity, setUserActivity] = useState(" ");
@@ -28,61 +24,76 @@ const Dashboard = (props) => {
   const [userPerformance, setUserPerformance] = useState(" ");
 
   //* ----------------------------------------------------------
-  const idUrlUser = props.params.id;
+
+  const idUrlUser = useParams().id;
 
   React.useEffect(() => {
-    Model.getUser(idUrlUser).then((res) => {
-      setUser(res.userInfos);
-    });
-    Model.getUser(idUrlUser).then((res) => {
-      setUserScore(res.score);
-    });
-    Model.getUser(idUrlUser).then((res) => {
-      setUserKeyData(res.keyData);
-    });
+    Promise.all([
+      Model.getUser(idUrlUser).then((res) => {
+        setUser(res.userInfos);
+      }),
+      Model.getUser(idUrlUser).then((res) => {
+        setUserScore(res.score);
+      }),
+      Model.getUser(idUrlUser).then((res) => {
+        setUserKeyData(res.keyData);
+      }),
 
-    //? getsetUserAvgActivity --> ........
+      Model.getUserActivity(idUrlUser).then((res) => {
+        setUserActivity(res.sessions);
+      }),
 
-    Model.getUserActivity(idUrlUser).then((res) => {
-      setUserActivity(res.sessions);
-    });
+      Model.getUserAvgSession(idUrlUser).then((res) => {
+        setUserAvgActivity(res.sessions);
+      }),
 
-    Model.getUserAvgSession(idUrlUser).then((res) => {
-      setUserAvgActivity(res.sessions);
-    });
+      Model.getUserPerformance(idUrlUser).then((res) => {
+        setUserPerformance(res.data);
+      }),
+    ])
+      .then(() => {
+        setIsLoading(false);
+      })
 
-    //? Performance <--------->
-    Model.getUserPerformance(idUrlUser).then((res) => {
-      setUserPerformance(res.data);
-    });
+      .catch((err) => {
+        setIsLoading(false);
+        alert("ERROR");
+      });
   }, []);
 
   return (
     <>
       <HeaderNav />
-      <UserInfos infos={user} />
-      <div className="GraphList">
-        <div className="DailyActivities">
-          <DailyActivities data={userActivity} />
-        </div>
-        <div className="ThreeGraphs">
-          <div className="AverageSession">
-            <ObjectifGraph datas={userAvgActivity} />
+      {isLoading ? (
+        <div>...Loading</div>
+      ) : (
+        <>
+          <UserInfos infos={user} />
+          <div className="GraphList">
+            <div className="DailyActivities">
+              <DailyActivities data={userActivity} />
+            </div>
+            <div className="ThreeGraphs">
+              <div className="AverageSession">
+                <ObjectifGraph datas={userAvgActivity} />
+              </div>
+              <div className="PerformanceGraph">
+                <RadarGraph userPerf={userPerformance} />
+              </div>
+              <div className="kpiGraph">
+                <KpiGraph userScore={userScore} />
+              </div>
+            </div>
           </div>
-          <div className="PerformanceGraph">
-            <RadarGraph userPerf={userPerformance} />
+          <div className="MacroList">
+            <MacroNutrimentsList userKeyData={userKeyData} />
           </div>
-          <div className="kpiGraph">
-            <KpiGraph userScore={userScore} />
-          </div>
-        </div>
-      </div>
-      <div className="MacroList">
-        <MacroNutrimentsList userKeyData={userKeyData} />
-      </div>
+        </>
+      )}
       <VerticalNav />
     </>
   );
 };
 
-export default withRouter(Dashboard);
+// export default withRouter(Dashboard);
+export default Dashboard;
