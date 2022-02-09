@@ -5,7 +5,6 @@
 - NodeJs(v16.13.2)
 - npm
   \
-  \
 
 ## Installing and Setting back-end
 
@@ -16,7 +15,6 @@
 
 - Launch your server on port 3000 (default port):\
    `npm run start`
-  \
   \
 
 ## Installing and Setting front-end
@@ -31,14 +29,12 @@
 
 Front-end is now rendered at URL `http://localhost:3001`
 \
-\
 
 ### Working Endpoints
 
 - With this project only two user had logged in : 12 & 18 \
 - To observe both user Dashboards `http://localhost:3001/12` & `http://localhost:3001/18` will be the endpoints.\
-  \
-- To simulate a server shortage or a connection issue : \
+- To simulate a server shortage or a connection issue :
   - Search for `.env` file, turn its boolean to `TRUE` and restart your front-end environnement. This will set the `mock service` data value as default value
 
 ### Editor Used

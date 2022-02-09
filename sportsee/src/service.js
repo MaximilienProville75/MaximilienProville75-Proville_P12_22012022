@@ -1,3 +1,8 @@
+/**
+ * Fetch user data information
+ * @param {string} userId
+ * @returns user data
+ */
 const getUser = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}`);
@@ -8,6 +13,11 @@ const getUser = async (userId) => {
   }
 };
 
+/**
+ * Fetch user activity data
+ * @param {string} userId
+ * @returns user activity data
+ */
 const getUserActivity = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}/activity`);
@@ -18,6 +28,11 @@ const getUserActivity = async (userId) => {
   }
 };
 
+/**
+ * Fetch user average session data
+ * @param {string} userId
+ * @returns user average session data
+ */
 const getUserAvgSession = async (userId) => {
   try {
     const res = await fetch(
@@ -30,6 +45,11 @@ const getUserAvgSession = async (userId) => {
   }
 };
 
+/**
+ * Fetch user performance data
+ * @param {string} userId
+ * @returns user performance data
+ */
 const getUserPerformance = async (userId) => {
   try {
     const res = await fetch(`http://localhost:3000/user/${userId}/performance`);

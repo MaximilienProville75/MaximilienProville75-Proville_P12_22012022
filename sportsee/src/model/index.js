@@ -1,9 +1,15 @@
 import * as apiService from "../service";
 import * as mockService from "../mockService";
-
+/**
+ * service will either provide the server data or the mock service data
+ */
 const service =
   process.env.REACT_APP_MOCK_ACTIVE === "true" ? mockService : apiService;
 
+/**
+ * Creating a class that will ensure the good format of each data
+ * Each function will format data from a specific fetch function
+ */
 export class Model {
   static async getUser(userId) {
     const result = await service.getUser(userId);
