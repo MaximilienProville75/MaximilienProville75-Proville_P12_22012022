@@ -67,25 +67,27 @@ const Dashboard = () => {
         <div>Cannot Get this user</div>
       ) : (
         <>
-          <UserInfos infos={user} />
-          <div className="GraphList">
-            <div className="DailyActivities">
-              <DailyActivities data={userActivity} />
+          <div className="PageContent">
+            <UserInfos infos={user} />
+            <div className="GraphList">
+              <div className="DailyActivities">
+                <DailyActivities data={userActivity} />
+              </div>
+              <div className="ThreeGraphs">
+                <div className="AverageSession">
+                  <ObjectifGraph datas={userAvgActivity} />
+                </div>
+                <div className="PerformanceGraph">
+                  <RadarGraph userPerf={userPerformance} />
+                </div>
+                <div className="kpiGraph">
+                  <KpiGraph userScore={userScore} />
+                </div>
+              </div>
             </div>
-            <div className="ThreeGraphs">
-              <div className="AverageSession">
-                <ObjectifGraph datas={userAvgActivity} />
-              </div>
-              <div className="PerformanceGraph">
-                <RadarGraph userPerf={userPerformance} />
-              </div>
-              <div className="kpiGraph">
-                <KpiGraph userScore={userScore} />
-              </div>
+            <div className="MacroList">
+              <MacroNutrimentsList userKeyData={userKeyData} />
             </div>
-          </div>
-          <div className="MacroList">
-            <MacroNutrimentsList userKeyData={userKeyData} />
           </div>
         </>
       )}

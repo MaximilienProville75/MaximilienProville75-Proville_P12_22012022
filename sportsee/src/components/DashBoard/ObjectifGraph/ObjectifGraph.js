@@ -53,7 +53,7 @@ const ObjectifGraph = (datas) => {
 
       <div>
         <LineChart
-          width={220}
+          width={230}
           height={220}
           data={data}
           margin={{ top: 40, right: 1, left: 5, bottom: 20 }}
@@ -70,7 +70,7 @@ const ObjectifGraph = (datas) => {
           ></XAxis>
           <Tooltip content={<CustomTooltip />} />
           <text
-            x="32%"
+            x="33%"
             y="15%"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -80,7 +80,7 @@ const ObjectifGraph = (datas) => {
             Durée moyenne des
           </text>
           <text
-            x="17%"
+            x="15%"
             y="20%"
             textAnchor="middle"
             dominantBaseline="middle"

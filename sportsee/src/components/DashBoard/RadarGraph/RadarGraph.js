@@ -37,14 +37,14 @@ const RadarGraph = (props) => {
 
   return (
     <RadarChart
-      outerRadius={90}
-      width={220}
+      outerRadius={75}
+      width={230}
       height={220}
       data={data}
       className="radarCharts"
     >
       <PolarGrid tick={{ fill: "red" }} radialLines={false} />
-      <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 12 }} />
+      <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 8 }} />
       <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
     </RadarChart>
   );

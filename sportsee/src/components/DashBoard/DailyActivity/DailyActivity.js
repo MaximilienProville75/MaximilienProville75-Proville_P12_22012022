@@ -49,7 +49,7 @@ const DailyActivities = (props) => {
 
   return (
     <BarChart
-      width={700}
+      width={725}
       height={250}
       data={data}
       margin={{ top: 30, bottom: 20, left: 25, right: 10 }}
