@@ -1,18 +1,19 @@
 .MacroCard{
-    width:250px;
-    height: 125px;
+    width:200px;
+    height: 90px;
     display: flex;
     flex-direction: row;
     background-color: #FBFBFB;
+
     box-shadow: 0px 2px 4px 0px #00000005;
     border-radius: 5px;
-    margin-bottom: 35px;
+    margin-bottom: 52px;
 }
 
 .MacoInfosImg img{
     height: 60px;
     width: 60px;
-    padding: 35px;
+    padding: 15px;
 }
 .MacoInfosImg{
     display:flex;
@@ -32,5 +33,5 @@
 }
 
 .MacoInfos{
-    padding-top: 20px;
+    padding-top: 2px;
 }

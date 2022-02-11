@@ -1,44 +1,45 @@
 .MacroList{
     position:absolute;
     right: 10px;
-    top: 260px;
+    top: 180px;
 }
 .GraphList{
     position:absolute;
-    top: 250px;
-    left: 200px;
+    top: 183px;
+    left: 95px;
     display: flex;
     max-width: 900px;
     flex-wrap: wrap;
 }
 .AverageSession{
-    /* position:absolute; */
+
     left: 200px;
     top: 600px;
 }
+
 
 .ThreeGraphs{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    width: 900px;
-    margin-top: 50px;
+    width: 700px;
+    margin-top: 25px;
 }
 
 .PerformanceGraph{
-    /* position:absolute; */
+
     left: 550px;
     top: 600px;
 }
 
 .kpiGraph{
-    /* position:absolute; */
+
     left: 700px;
     top: 600px;
 }
 
 .DailyActivities{
-    /* position:absolute; */
+
     left: 200px;
     top: 250px; 
 }

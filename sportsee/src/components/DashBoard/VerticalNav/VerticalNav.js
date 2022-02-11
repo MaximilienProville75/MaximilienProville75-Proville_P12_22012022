@@ -1,9 +1,9 @@
 import React from "react";
 import "../VerticalNav/VerticalNav.css";
-import yoga from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/yoga.png";
-import swimming from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/swimming.png";
-import cycling from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/cycling.png";
-import bodybuilding from "/Users/maximilienproville/Desktop/FORMATION Openclassrooms/Projet_12_Sports/sportsee/src/assets/bodybuilding.png";
+import yoga from "../../../assets/yoga.png";
+import swimming from "../../../assets/swimming.png";
+import cycling from "../../../assets/cycling.png";
+import bodybuilding from "../../../assets/bodybuilding.png";
 
 function VerticalNav() {
   return (

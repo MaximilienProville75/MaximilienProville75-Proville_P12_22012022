@@ -8,8 +8,8 @@ const KpiGraph = (props) => {
 
   return (
     <RadialBarChart
-      width={250}
-      height={250}
+      width={220}
+      height={220}
       cx="50%"
       cy="50%"
       innerRadius={100}

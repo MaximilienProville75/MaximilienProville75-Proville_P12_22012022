@@ -49,8 +49,8 @@ const DailyActivities = (props) => {
 
   return (
     <BarChart
-      width={800}
-      height={300}
+      width={700}
+      height={250}
       data={data}
       margin={{ top: 30, bottom: 20, left: 25, right: 10 }}
       className="barCharts"
@@ -70,10 +70,15 @@ const DailyActivities = (props) => {
         align="right"
         wrapperStyle={{
           position: "relative",
-          top: "-300px",
+          top: "-253px",
+          right: "-30px",
+        }}
+        style={{
+          fontSize: "10px",
         }}
         iconType="circle"
-
+        fontFamily={"Roboto, sans-serif"}
+        fontSize={"8px"}
         // content={renderLegend}
       />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />

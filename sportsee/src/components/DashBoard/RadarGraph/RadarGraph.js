@@ -38,8 +38,8 @@ const RadarGraph = (props) => {
   return (
     <RadarChart
       outerRadius={90}
-      width={280}
-      height={250}
+      width={220}
+      height={220}
       data={data}
       className="radarCharts"
     >

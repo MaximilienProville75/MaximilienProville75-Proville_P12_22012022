@@ -48,15 +48,18 @@ const ObjectifGraph = (datas) => {
   const data = generateData(datas);
 
   return (
-    <div>
-      <div className="LineChart2">
+    <>
+      <div className="LineChart2"></div>
+
+      <div>
         <LineChart
-          width={260}
-          height={250}
+          width={220}
+          height={220}
           data={data}
           margin={{ top: 40, right: 1, left: 5, bottom: 20 }}
           className="LineChart1"
         >
+          {/* <div className="blabla"> */}
           <XAxis
             dataKey="day"
             className="dataNaming"
@@ -99,9 +102,10 @@ const ObjectifGraph = (datas) => {
               r: 5,
             }}
           />
+          {/* </div> */}
         </LineChart>
       </div>
-    </div>
+    </>
   );
 };
 
