@@ -79,7 +79,6 @@ const DailyActivities = (props) => {
         iconType="circle"
         fontFamily={"Roboto, sans-serif"}
         fontSize={"8px"}
-        // content={renderLegend}
       />
       <CartesianGrid strokeDasharray="5 5" vertical={false} />
       <XAxis
